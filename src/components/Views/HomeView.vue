@@ -11,7 +11,7 @@ function handleChooseMode(mode: string) {
 }
 </script>
 <template>
-  <div class="min-h-screen flex flex-col items-center justify-center ">
+  <div class="min-h-4/5 max-h-dvh flex flex-col items-center justify-center ">
     <div class="relative">
       <div @click="scheduleStore.viewMode = ''"
           class="absolute top-1 right-2 rounded-sm p-1 py-0.5 text-black dark:text-white hover:text-red-600 hover:shadow-xs hover:shadow-red-500 transition cursor-pointer">

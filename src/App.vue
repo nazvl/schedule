@@ -5,9 +5,12 @@ import Loader from '@/components/ui/Loader.vue';
 </script>
 
 <template>
-  <Loader/>
-  <Header></Header>
-<router-view></router-view>
+  <div class="h-dvh">
+    <Loader/>
+    <Header></Header>
+    <router-view></router-view>
+  </div>
+
 
 </template>
 
