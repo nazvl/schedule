@@ -1,10 +1,45 @@
-import { defineStore } from 'pinia'
-import { ref } from "vue";
-
+import {defineStore} from 'pinia'
+import {ref} from "vue";
+import { useLoaderStore } from './loaderStore';
 
 export const useScheduleStore = defineStore('schedule', () => {
     const viewMode = ref<string | null>('')
+    const loaderStore = useLoaderStore()
+    const currentGroup = ref<any>()
+    const groupList = ref([
+            {
+                name: '42-ПИ',
+                id: 123
+            },
+            {
+                name: '42-ПИИ',
+                id: 456
+            }
+        ]
+    )
+    const choosenYear = ref('0');
+    const years = [
+        { value: '1', name: '1' },
+        { value: '2', name: '2' },
+        { value: '3', name: '3' },
+        { value: '4', name: '4' },
+    ]
     // отпрвляю группу и даты, получаю расписание
+    async function getSchedule(group: any, date: any) {
+        loaderStore.status = true
+        try {
+            setTimeout(() => {
+               console.log('zapros');
+            }, 5000)
+        }
+        catch (error) {
+
+            console.log(error);
+        } finally {
+            loaderStore.status = false
+        }
+    }
+
     const schedule = ref<any>([
         {
             date: "03-03-2003",
@@ -107,5 +142,5 @@ export const useScheduleStore = defineStore('schedule', () => {
         }
     ]);
 
-    return { schedule, viewMode }
+    return {schedule, viewMode, currentGroup, groupList, years, choosenYear, getSchedule}
 })
