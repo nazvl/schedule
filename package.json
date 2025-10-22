@@ -15,6 +15,7 @@
     "flowbite-vue": "^0.2.2",
     "pinia": "^3.0.3",
     "tailwindcss": "^4.1.15",
+    "vite-plugin-pwa": "^1.1.0",
     "vue": "^3.5.22",
     "vue-router": "^4.6.3"
   },
