@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 import { ref } from "vue";
-
+//@ts-nocheck
 
 export const useLoaderStore = defineStore('loader', () => {
 

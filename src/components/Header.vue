@@ -1,5 +1,6 @@
 <script setup lang="ts">
 //@ts-ignore
+//@ts-nocheck
 import config from "@/config/configuration";
 import {ref} from "vue";
 

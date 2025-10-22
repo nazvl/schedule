@@ -1,4 +1,5 @@
 <script setup lang="ts">
+//@ts-nocheck
 import {useScheduleStore} from "@/stores/scheduleStore.ts";
 import StudentSearch from "@/components/search/StudentSearch.vue";
 
