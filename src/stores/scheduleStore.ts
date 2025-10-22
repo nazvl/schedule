@@ -1,11 +1,12 @@
 import {defineStore} from 'pinia'
 import {ref} from "vue";
-import { useLoaderStore } from './loaderStore';
+import {useLoaderStore} from './loaderStore';
 
 export const useScheduleStore = defineStore('schedule', () => {
     const viewMode = ref<string | null>('')
     const loaderStore = useLoaderStore()
-    const currentGroup = ref<any>()
+    const currentGroup = ref<any>();
+    const choosenDate = ref('');
     const groupList = ref([
             {
                 name: '42-ПИ',
@@ -19,21 +20,23 @@ export const useScheduleStore = defineStore('schedule', () => {
     )
     const choosenYear = ref('0');
     const years = [
-        { value: '1', name: '1' },
-        { value: '2', name: '2' },
-        { value: '3', name: '3' },
-        { value: '4', name: '4' },
+        {value: '1', name: '1'},
+        {value: '2', name: '2'},
+        {value: '3', name: '3'},
+        {value: '4', name: '4'},
     ]
+
     // отпрвляю группу и даты, получаю расписание
-    async function getSchedule(group: any, date: any) {
+    async function getSchedule() {
         loaderStore.status = true
         try {
-            setTimeout(() => {
-               console.log('zapros');
-            }, 5000)
-        }
-        catch (error) {
-
+            if (choosenDate.value && choosenYear.value && currentGroup.value) {
+                await new Promise(resolve => setTimeout(() => {
+                    console.log('zapros', choosenYear.value, currentGroup.value, choosenDate.value);
+                    resolve(true)
+                }, 5000))
+            }
+        } catch (error) {
             console.log(error);
         } finally {
             loaderStore.status = false
@@ -142,5 +145,5 @@ export const useScheduleStore = defineStore('schedule', () => {
         }
     ]);
 
-    return {schedule, viewMode, currentGroup, groupList, years, choosenYear, getSchedule}
+    return {schedule, viewMode, currentGroup, groupList, years, choosenYear, getSchedule, choosenDate}
 })

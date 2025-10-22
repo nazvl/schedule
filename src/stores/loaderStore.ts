@@ -4,6 +4,6 @@ import { ref } from "vue";
 
 export const useLoaderStore = defineStore('loader', () => {
 
-    const status = ref<boolean>(true)
+    const status = ref<boolean>(false)
     return { status }
 })
