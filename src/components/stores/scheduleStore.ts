@@ -3,7 +3,7 @@ import { ref } from "vue";
 
 
 export const useScheduleStore = defineStore('schedule', () => {
-
+    const viewMode = ref<string | null>('')
     // отпрвляю группу и даты, получаю расписание
     const schedule = ref<any>([
         {
@@ -107,5 +107,5 @@ export const useScheduleStore = defineStore('schedule', () => {
         }
     ]);
 
-    return { schedule }
+    return { schedule, viewMode }
 })
