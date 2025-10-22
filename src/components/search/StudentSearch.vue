@@ -28,8 +28,8 @@ function handleSearch() {
 </script>
 
 <template>
-  <div class="bg-white rounded-lg shadow-xl p-3 dark:bg-gray-800">
-    <h1 class="text-center mb-6 font-bold text-xl">Просмотр расписания</h1>
+  <div class="bg-white rounded-lg shadow-xl p-3 dark:bg-gray-800 dark:text-white">
+    <h1 class="text-center mb-6 font-bold text-xl ">Просмотр расписания</h1>
     <div class="grid grid-cols-2 gap-4">
       <fwb-select
           v-model="scheduleStore.choosenYear"
