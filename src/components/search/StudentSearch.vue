@@ -6,13 +6,14 @@ import {useScheduleStore} from "@/stores/scheduleStore.ts";
 import {computed, watch} from "vue";
 import VueDatePicker from '@vuepic/vue-datepicker';
 import '@vuepic/vue-datepicker/dist/main.css'
+import {useRouter} from "vue-router";
 
 const scheduleStore = useScheduleStore();
 const filteredGroups = computed(() => {
   //@ts-ignore
   return scheduleStore.groupList.filter((a) => a.name[0] === scheduleStore.choosenYear)
 })
-
+const router = useRouter();
 watch(scheduleStore.choosenYear, () => {
   if (scheduleStore.currentGroup) {
     scheduleStore.currentGroup = null;
@@ -22,7 +23,23 @@ watch(scheduleStore.choosenYear, () => {
 
 function handleSearch() {
   if (scheduleStore.choosenYear && scheduleStore.currentGroup && scheduleStore.choosenDate) {
-    scheduleStore.getSchedule();
+    try {
+      scheduleStore.getSchedule();
+    }
+    catch (error) {
+
+    }
+    finally {
+      router.push({
+        path: '/schedule',
+        query: {
+          year: scheduleStore.choosenYear,
+          group: scheduleStore.currentGroup,
+          date: scheduleStore.choosenDate
+        }
+      });
+    }
+
   }
 }
 </script>

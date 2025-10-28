@@ -5,7 +5,7 @@ import {useLoaderStore} from './loaderStore';
 export const useScheduleStore = defineStore('schedule', () => {
     const viewMode = ref<string | null>('')
     const loaderStore = useLoaderStore()
-    const currentGroup = ref<any>();
+    const currentGroup = ref<Record<string, string> | null>();
     const choosenDate = ref('');
     const groupList = ref([
             {
@@ -42,7 +42,13 @@ export const useScheduleStore = defineStore('schedule', () => {
             loaderStore.status = false
         }
     }
-
+    function clearAllData() {
+        schedule.value = []
+        viewMode.value = '';
+        choosenDate.value = '';
+        choosenYear.value = '0';
+        currentGroup.value = null;
+    }
     const schedule = ref<any>([
         {
             date: "03-03-2003",
@@ -145,5 +151,5 @@ export const useScheduleStore = defineStore('schedule', () => {
         }
     ]);
 
-    return {schedule, viewMode, currentGroup, groupList, years, choosenYear, getSchedule, choosenDate}
+    return {schedule, viewMode, currentGroup, groupList, years, choosenYear, getSchedule, choosenDate, clearAllData};
 })
