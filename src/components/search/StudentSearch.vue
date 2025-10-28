@@ -55,7 +55,7 @@ function handleSearch() {
       </div>
 
     </div>
-    <button @click="handleSearch" class="bg-blue-500 text-white p-2 rounded-lg mt-5 w-full">Поиск</button>
+    <button @click="handleSearch" class="bg-blue-500 text-white p-2 rounded-lg mt-5 w-full cursor-pointer hover:shadow-md transition" >Поиск</button>
   </div>
 </template>
 
