@@ -35,7 +35,7 @@ export const useScheduleStore = defineStore('schedule', () => {
                     console.log('zapros', choosenYear.value, currentGroup.value, choosenDate.value);
                     resolve(true)
                     schedule.value = mockSchedule
-                }, 5000))
+                }, 1))
             }
         } catch (error) {
             console.log(error);
