@@ -13,6 +13,7 @@
     "@vuepic/vue-datepicker": "^11.0.3",
     "flowbite": "^3.1.2",
     "flowbite-vue": "^0.2.2",
+    "motion-v": "^1.7.4",
     "pinia": "^3.0.3",
     "tailwindcss": "^4.1.15",
     "vite-plugin-pwa": "^1.1.0",
