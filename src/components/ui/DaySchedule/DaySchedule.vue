@@ -20,7 +20,7 @@ const props = defineProps({
     </div>
     <div class="p-2 w-full">
       <div v-for="lesson in props.schedule.schedule" :key="lesson.number" class="bg-white m-1 p-2 rounded">
-        {{ lesson.number }}. {{ lesson.lessonName }} ({{ lesson.lessonType === 1 ? 'Лекция' : 'Практика' }})<br>
+        <span class="rounded-full bg-blue-500 px-2 text-white">{{ lesson.number }}</span> {{ lesson.lessonName }} ({{ lesson.lessonType === 1 ? 'Лекция' : 'Практика' }})<br>
         Преподаватель: {{ lesson.teacherName }}<br>
         Аудитория: {{ lesson.room }}
       </div>
