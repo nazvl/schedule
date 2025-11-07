@@ -17,7 +17,7 @@ watch(scheduleStore.currentGroup, () => {
 <div class="w-full h-full flex flex-col items-center gap-3 my-6">
   <h1 class="text-2xl font-bold dark:text-white">Расписание</h1>
   <p class="dark:text-white">Здесь будет расписание для группы {{scheduleStore.currentGroup.name}} для периода {{scheduleStore.choosenDate[0].toLocaleDateString()}} - {{scheduleStore.choosenDate[1].toLocaleString()}}</p>
-  <div class="w-full max-w-6xl mx-auto flex flex-row items-center gap-3 flex-wrap">
+  <div class="w-full max-w-6xl mx-auto flex flex-row items-center gap-3 flex-wrap justify-center">
     <div class="max-w-min" v-for="dailySchedule in scheduleStore.schedule">
       <DaySchedule :schedule="dailySchedule" />
     </div>
