@@ -30,7 +30,7 @@ watch(scheduleStore.currentGroup, () => {
           :whileInView="{ opacity: 1, y: 0 }"
           :inViewOptions="{ once: true }"
           :viewport="{ margin: '-50px' }"
-          :transition="{ delay: 0.1, duration: 0.3 }"
+          :transition="{ delay: index * 0.1, duration: 0.3 }"
           class="max-w-min"
       >
         <DaySchedule :schedule="dailySchedule" />
