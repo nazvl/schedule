@@ -28,8 +28,8 @@ watch(scheduleStore.currentGroup, () => {
           :key="index"
           :initial="{ opacity: 0, y: 50 }"
           :whileInView="{ opacity: 1, y: 0 }"
-          :viewport="{ once: true, margin: '-100px' }"
-          :transition="{ delay: index * 0.1, duration: 0.2 }"
+          :viewport="{ margin: '-20px' }"
+          :transition="{ delay: 0.1, duration: 0.2 }"
           class="max-w-min"
       >
         <DaySchedule :schedule="dailySchedule" />
