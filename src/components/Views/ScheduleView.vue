@@ -22,11 +22,7 @@ watch(scheduleStore.currentGroup, () => {
       <DaySchedule :schedule="dailySchedule" />
     </div>
   </div>
-
-
-  <button>
     <router-link @click="scheduleStore.clearAllData()" to="/" class="bg-red-500 rounded p-3 my-6">Назад</router-link>
-  </button>
 </div>
 </template>
 

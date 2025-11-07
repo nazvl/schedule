@@ -75,13 +75,37 @@ export const useScheduleStore = defineStore('schedule', () => {
                     room: "214"
                 },
                 {
+                    number: 2,
+                    lessonName: "Основы кулинарии",
+                    lessonType: 1,
+                    teacherName: "Петров А.А.",
+                    teacherID: 456,
+                    room: "214"
+                },
+                {
                     number: 3,
                     lessonName: "Сервировка",
                     lessonType: 2,
                     teacherName: "Смирнова О.О.",
                     teacherID: 789,
                     room: "101"
-                }
+                },
+                {
+                    number: 4,
+                    lessonName: "Сервировка",
+                    lessonType: 2,
+                    teacherName: "Смирнова О.О.",
+                    teacherID: 789,
+                    room: "101"
+                },
+                {
+                    number: 5,
+                    lessonName: "Сервировка",
+                    lessonType: 2,
+                    teacherName: "Смирнова О.О.",
+                    teacherID: 789,
+                    room: "101"
+                },
             ]
         },
         {
