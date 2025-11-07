@@ -3,7 +3,7 @@
 import {useScheduleStore} from "@/stores/scheduleStore";
 import {watch} from "vue";
 import router from "../../router";
-
+import DaySchedule from "../ui/DaySchedule/DaySchedule.vue";
 const scheduleStore = useScheduleStore();
 
 watch(scheduleStore.currentGroup, () => {
@@ -17,7 +17,7 @@ watch(scheduleStore.currentGroup, () => {
 <div class="w-full h-full flex flex-col items-center gap-3 my-6">
   <h1 class="text-2xl font-bold">Расписание</h1>
   <p>Здесь будет расписание для группы {{scheduleStore.currentGroup.name}} для периода {{scheduleStore.choosenDate[0].toLocaleDateString()}} - {{scheduleStore.choosenDate[1].toLocaleString()}}</p>
-
+  <DaySchedule :schedule="scheduleStore.schedule[1]" />
   <button>
     <router-link @click="scheduleStore.clearAllData()" to="/" class="bg-red-500 rounded p-3 my-6">Назад</router-link>
   </button>
