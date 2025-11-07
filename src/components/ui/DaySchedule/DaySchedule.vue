@@ -1,4 +1,5 @@
 <script setup lang="ts">
+//@ts-ignore
 import { ScheduleDay } from '@/types/scheduleTypes';
 import type {PropType} from "vue";
 
