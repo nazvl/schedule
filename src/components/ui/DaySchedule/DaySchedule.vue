@@ -15,7 +15,7 @@ const props = defineProps({
 
 <template>
   <div class="w-80 min-h-80 bg-gray-400 flex flex-col items-center justify-start rounded-xl">
-    <div class="w-full text-center bg-gray-600 text-white overflow-hidden rounded-t-xl">
+    <div class="w-full text-center bg-gray-600 dark:bg-gray-700 text-white overflow-hidden rounded-t-xl">
       {{ props.schedule.date }}
     </div>
     <div class="p-2 w-full">
